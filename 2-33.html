@@ -48,18 +48,32 @@ console.log(p);
 console.dir(p);//shows all the stuff that lives in the element
 console.clear();
     // Grouping together
-dogd.forEach(dog => {
-  console.group(`${dog.name}`);
+dogs.forEach(dog => {
+  console.groupCollapsed(`${dog.name}`);
   console.log(`this is ${dog.name}`);
   console.log(`${dog.name} is ${dog.age} years old`);
   console.log(`${dog.name} is ${dog.age*7} dog years old `);
   console.groupEnd(`${dog.name}`);
 })
     // counting
-
+console.count('sagang');
+console.count('sagang');
+console.count('eungsung');
+console.count('eungsung');
+console.count('sagang');
+console.count('sagang');
+console.count('eungsung');
+console.count('sagang');
 
     // timing
 
+console.time('fetching data');
+fetch('https://api.github.com/users/quasiturtle')
+ .then(data => data.json())
+ .then(data => {
+  console.timeEnd('fetching data');
+  console,log(data);
+});
 
 
 </script>
